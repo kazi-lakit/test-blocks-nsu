@@ -44,6 +44,7 @@ import SharedWithMe from 'pages/file-manager/shared-files';
 import Trash from 'pages/file-manager/trash';
 import { ChatPage } from './pages/chat/chat';
 import { FileManagerMyFiles } from './pages/file-manager/my-files';
+import { Vehicle } from './pages/Vehicle/Vehicle';
 
 const queryClient = new QueryClient();
 
@@ -96,6 +97,7 @@ function AppContent() {
                 <Route path="/inventory" element={<Inventory />} />
                 <Route path="/inventory/add" element={<InventoryForm />} />
                 <Route path="/inventory/:itemId" element={<InventoryDetails />} />
+                <Route path="/vehicles" element={<Vehicle />} />
                 <Route path="/activity-log" element={<ActivityLogPage1 />} />
                 <Route path="/timeline" element={<ActivityLogPage2 />} />
                 <Route path="/mail" element={<Email />} />

@@ -13,6 +13,7 @@ export const routeModuleMap: Record<string, string[]> = {
   '/finance': ['common', 'finance'],
   '/identity-management': ['common', 'iam'],
   '/inventory': ['common', 'inventory'],
+  '/vehicles': ['common', 'Vehicle'],
   '/mail': ['common', 'mail'],
   '/calendar': ['common', 'calendar'],
   '/activity-log': ['common', 'timeline'],
