@@ -14,6 +14,19 @@ interface PaginationState {
   totalCount: number;
 }
 
+/**
+ * Renders the Vehicle management page: a paginated data table of vehicles with an "Add Vehicle" modal.
+ *
+ * This React component fetches vehicle data according to internal pagination state, maps API results into table rows,
+ * and provides manual pagination controls. It also exposes an "Add Vehicle" dialog that opens a form and closes on success.
+ *
+ * The component manages:
+ * - local table data and pagination state,
+ * - fetching/loading/error state from the vehicles API,
+ * - opening/closing the add-vehicle modal.
+ *
+ * @returns A React element containing the vehicle page UI.
+ */
 export function Vehicle() {
   const columns = createVehicleColumns();
   const [VehicleTableData, setVehicleTableData] = useState<VehicleItem[]>([]);
