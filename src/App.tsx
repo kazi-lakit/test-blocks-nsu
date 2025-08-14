@@ -65,6 +65,18 @@ function RedirectHandler() {
   return null;
 }
 
+/**
+ * Renders the main application content: route tree, layout wrappers, and global UI elements.
+ *
+ * Shows a LoadingOverlay while the language/i18n context is initializing. Once ready,
+ * it mounts the RedirectHandler (handles a delayed redirect from `/success`), wraps the
+ * application in ClientMiddleware, ThemeProvider, and SidebarProvider, and defines all
+ * authentication and main application routes (including nested invoice and file-manager routes).
+ * Also renders a global Toaster outside the routed content and provides redirects for `/` → `/dashboard`
+ * and unknown routes → `/404`.
+ *
+ * @returns The application content as JSX (or a LoadingOverlay while language initialization is in progress).
+ */
 function AppContent() {
   const { isLoading } = useLanguageContext();
 

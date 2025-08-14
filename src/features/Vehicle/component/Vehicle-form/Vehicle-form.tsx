@@ -14,6 +14,19 @@ interface VehicleFormProps {
   onCancel?: () => void;
 }
 
+/**
+ * Renders a form for creating a new vehicle and handles validation and submission.
+ *
+ * The form uses react-hook-form with a Zod schema (VehicleSchema) to validate fields:
+ * Name, Brand, Model (text), Type (select), Price (number), and Stock (number).
+ * On submit the form builds an AddVehicleInput and calls the useAddVehicle mutation.
+ * While the mutation is in progress the submit button is disabled and shows "Adding...".
+ * On successful creation the form is reset and the optional `onSuccess` callback is invoked.
+ *
+ * @param onSuccess - Optional callback invoked after a vehicle is successfully added.
+ * @param onCancel - Optional callback invoked when the user cancels the form (renders a Cancel button when provided).
+ * @returns A JSX element containing the vehicle creation form.
+ */
 export function VehicleForm({ onSuccess, onCancel }: VehicleFormProps) {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { mutate: addVehicle, isPending } = useAddVehicle();
